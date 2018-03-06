@@ -33,7 +33,7 @@ class SolarVC: UIViewController {
         
     }
     
-    func addNode(){
+    func addNode() {
         
         let sunNode = SCNNode(geometry: SCNSphere(radius: 0.2))
         sunNode.position = SCNVector3(0,0,-1)
@@ -45,11 +45,9 @@ class SolarVC: UIViewController {
         let moonparentnode = SCNNode()
         moonparentnode.position = SCNVector3(1,0,0)
         
-        
         let earthNode = SCNNode(geometry: SCNSphere(radius: 0.2))
         // MARK: Diffuse
         // to wrap around the whole surface
-        
         earthNode.geometry?.firstMaterial?.diffuse.contents = #imageLiteral(resourceName: "EarthDay")
         // MARK: specular
         // to wrap around the whole surface so that light reflects
@@ -90,21 +88,11 @@ class SolarVC: UIViewController {
         earthNode.addChildNode(moonNode)
         moonparentnode.addChildNode(moonNode)
 
-
         solar_ScnView.scene.rootNode.addChildNode(sunNode)
         solar_ScnView.scene.rootNode.addChildNode(earthparentnode)
-
-        
-        
-        
-        
-     
-       
         
     }
     
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -112,8 +100,7 @@ class SolarVC: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
+ 
 }
 
 

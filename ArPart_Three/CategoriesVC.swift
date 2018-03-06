@@ -11,13 +11,15 @@ import UIKit
 class CategoriesVC: UIViewController {
 
     @IBOutlet var tbl_Category: UITableView!
+    
     var arrCat : [String] = Array()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         arrCat.append("Scenview Configuration")
         arrCat.append("Euler Angles")
         arrCat.append("Rotations")
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,8 +27,6 @@ class CategoriesVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -34,10 +34,11 @@ class CategoriesVC: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
-extension CategoriesVC : UITableViewDelegate, UITableViewDataSource{
+
+extension CategoriesVC : UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
@@ -50,16 +51,14 @@ extension CategoriesVC : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 1{
+        if indexPath.row == 1 {
             let ViewController = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             self.navigationController?.pushViewController(ViewController, animated: true)
         }
-        if indexPath.row == 2{
+        if indexPath.row == 2 {
             let ViewController = storyboard?.instantiateViewController(withIdentifier: "SolarVC") as! SolarVC
             self.navigationController?.pushViewController(ViewController, animated: true)
         }
         
     }
-    
-    
 }
